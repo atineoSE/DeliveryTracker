@@ -12,19 +12,10 @@
 		3CF1DF13281833EB00632152 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CF1DF12281833EB00632152 /* Assets.xcassets */; };
 		3CF1DF16281833EB00632152 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CF1DF15281833EB00632152 /* Preview Assets.xcassets */; };
 		3CF1DF20281833EB00632152 /* DeliveryTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF1F281833EB00632152 /* DeliveryTrackerTests.swift */; };
-		3CF1DF2A281833EB00632152 /* DeliveryTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF29281833EB00632152 /* DeliveryTrackerUITests.swift */; };
-		3CF1DF2C281833EB00632152 /* DeliveryTrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF2B281833EB00632152 /* DeliveryTrackerUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		3CF1DF1C281833EB00632152 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3CF1DF03281833E900632152 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3CF1DF0A281833E900632152;
-			remoteInfo = DeliveryTracker;
-		};
-		3CF1DF26281833EB00632152 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3CF1DF03281833E900632152 /* Project object */;
 			proxyType = 1;
@@ -41,9 +32,6 @@
 		3CF1DF15281833EB00632152 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3CF1DF1B281833EB00632152 /* DeliveryTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeliveryTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CF1DF1F281833EB00632152 /* DeliveryTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTrackerTests.swift; sourceTree = "<group>"; };
-		3CF1DF25281833EB00632152 /* DeliveryTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeliveryTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3CF1DF29281833EB00632152 /* DeliveryTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTrackerUITests.swift; sourceTree = "<group>"; };
-		3CF1DF2B281833EB00632152 /* DeliveryTrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,13 +49,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3CF1DF22281833EB00632152 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -76,7 +57,6 @@
 			children = (
 				3CF1DF0D281833E900632152 /* DeliveryTracker */,
 				3CF1DF1E281833EB00632152 /* DeliveryTrackerTests */,
-				3CF1DF28281833EB00632152 /* DeliveryTrackerUITests */,
 				3CF1DF0C281833E900632152 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,7 +66,6 @@
 			children = (
 				3CF1DF0B281833E900632152 /* DeliveryTracker.app */,
 				3CF1DF1B281833EB00632152 /* DeliveryTrackerTests.xctest */,
-				3CF1DF25281833EB00632152 /* DeliveryTrackerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -116,15 +95,6 @@
 				3CF1DF1F281833EB00632152 /* DeliveryTrackerTests.swift */,
 			);
 			path = DeliveryTrackerTests;
-			sourceTree = "<group>";
-		};
-		3CF1DF28281833EB00632152 /* DeliveryTrackerUITests */ = {
-			isa = PBXGroup;
-			children = (
-				3CF1DF29281833EB00632152 /* DeliveryTrackerUITests.swift */,
-				3CF1DF2B281833EB00632152 /* DeliveryTrackerUITestsLaunchTests.swift */,
-			);
-			path = DeliveryTrackerUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,24 +135,6 @@
 			productReference = 3CF1DF1B281833EB00632152 /* DeliveryTrackerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		3CF1DF24281833EB00632152 /* DeliveryTrackerUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3CF1DF35281833EB00632152 /* Build configuration list for PBXNativeTarget "DeliveryTrackerUITests" */;
-			buildPhases = (
-				3CF1DF21281833EB00632152 /* Sources */,
-				3CF1DF22281833EB00632152 /* Frameworks */,
-				3CF1DF23281833EB00632152 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3CF1DF27281833EB00632152 /* PBXTargetDependency */,
-			);
-			name = DeliveryTrackerUITests;
-			productName = DeliveryTrackerUITests;
-			productReference = 3CF1DF25281833EB00632152 /* DeliveryTrackerUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -197,10 +149,6 @@
 						CreatedOnToolsVersion = 13.3.1;
 					};
 					3CF1DF1A281833EB00632152 = {
-						CreatedOnToolsVersion = 13.3.1;
-						TestTargetID = 3CF1DF0A281833E900632152;
-					};
-					3CF1DF24281833EB00632152 = {
 						CreatedOnToolsVersion = 13.3.1;
 						TestTargetID = 3CF1DF0A281833E900632152;
 					};
@@ -221,7 +169,6 @@
 			targets = (
 				3CF1DF0A281833E900632152 /* DeliveryTracker */,
 				3CF1DF1A281833EB00632152 /* DeliveryTrackerTests */,
-				3CF1DF24281833EB00632152 /* DeliveryTrackerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -237,13 +184,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		3CF1DF19281833EB00632152 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3CF1DF23281833EB00632152 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -270,15 +210,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3CF1DF21281833EB00632152 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3CF1DF2A281833EB00632152 /* DeliveryTrackerUITests.swift in Sources */,
-				3CF1DF2C281833EB00632152 /* DeliveryTrackerUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -286,11 +217,6 @@
 			isa = PBXTargetDependency;
 			target = 3CF1DF0A281833E900632152 /* DeliveryTracker */;
 			targetProxy = 3CF1DF1C281833EB00632152 /* PBXContainerItemProxy */;
-		};
-		3CF1DF27281833EB00632152 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3CF1DF0A281833E900632152 /* DeliveryTracker */;
-			targetProxy = 3CF1DF26281833EB00632152 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -507,42 +433,6 @@
 			};
 			name = Release;
 		};
-		3CF1DF36281833EB00632152 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WDVRK9UE68;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.adriantineo.DeliveryTrackerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DeliveryTracker;
-			};
-			name = Debug;
-		};
-		3CF1DF37281833EB00632152 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WDVRK9UE68;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.adriantineo.DeliveryTrackerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DeliveryTracker;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -569,15 +459,6 @@
 			buildConfigurations = (
 				3CF1DF33281833EB00632152 /* Debug */,
 				3CF1DF34281833EB00632152 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3CF1DF35281833EB00632152 /* Build configuration list for PBXNativeTarget "DeliveryTrackerUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3CF1DF36281833EB00632152 /* Debug */,
-				3CF1DF37281833EB00632152 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
