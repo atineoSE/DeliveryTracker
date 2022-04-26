@@ -21,12 +21,9 @@ class ResidentListViewModel: ObservableObject {
                 // TODO: handle error
                 return
             }
-            
-            print(packagesResult)
-            // TODO: process results
-            
+            AppLogger.debug("Received package results: \n\(packagesResult.description)")
             DispatchQueue.main.async {
-                self?.residents = []
+                self?.residents = packagesResult.residents
             }
         }
     }

@@ -23,3 +23,25 @@ struct PackagesNetworkModel: Decodable {
     }
     let result: PackageResult
 }
+
+extension PackagesNetworkModel {
+    var residents: [Resident] {
+        []
+    }
+}
+
+extension PackagesNetworkModel: CustomStringConvertible {
+    var description: String {
+        var description = ""
+        for package in result.packages {
+            description.append("\tid: \(package.id), type: \(package.type), carrier: \(package.carrier), \(package.recipient.description)\n")
+        }
+        return description
+    }
+}
+
+extension PackagesNetworkModel.PackageResult.Package.Recipient: CustomStringConvertible {
+    var description: String {
+        "name: \(name), email: \(email)"
+    }
+}
