@@ -23,13 +23,15 @@
 		3CF1DF5428183D7F00632152 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF5328183D7F00632152 /* Package.swift */; };
 		3CF1DF58281841F700632152 /* PackageNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF57281841F700632152 /* PackageNetworkModel.swift */; };
 		3CF1DF5A281843F200632152 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF59281843F200632152 /* Endpoint.swift */; };
-		3CF1DF5C281846CA00632152 /* EmptyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF5B281846CA00632152 /* EmptyModel.swift */; };
+		3CF1DF5C281846CA00632152 /* EmptyNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF5B281846CA00632152 /* EmptyNetworkModel.swift */; };
 		3CF1DF5E28184FE100632152 /* ResidentRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF5D28184FE100632152 /* ResidentRowView.swift */; };
 		3CF1DF60281851A400632152 /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF5F281851A400632152 /* AppImage.swift */; };
 		3CF1DF622818554B00632152 /* PackagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF612818554B00632152 /* PackagesView.swift */; };
 		3CF1DF64281855AA00632152 /* UIParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF63281855AA00632152 /* UIParameters.swift */; };
 		3CF1DF66281856C000632152 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF65281856C000632152 /* ViewModifiers.swift */; };
 		3CF1DF682818571100632152 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF672818571100632152 /* Colors.swift */; };
+		3CF1DF6A2818900900632152 /* NotificationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF692818900900632152 /* NotificationButton.swift */; };
+		3CF1DF6C281891E100632152 /* NotificationNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF6B281891E100632152 /* NotificationNetworkModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,13 +63,15 @@
 		3CF1DF5328183D7F00632152 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		3CF1DF57281841F700632152 /* PackageNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageNetworkModel.swift; sourceTree = "<group>"; };
 		3CF1DF59281843F200632152 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		3CF1DF5B281846CA00632152 /* EmptyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyModel.swift; sourceTree = "<group>"; };
+		3CF1DF5B281846CA00632152 /* EmptyNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyNetworkModel.swift; sourceTree = "<group>"; };
 		3CF1DF5D28184FE100632152 /* ResidentRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentRowView.swift; sourceTree = "<group>"; };
 		3CF1DF5F281851A400632152 /* AppImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImage.swift; sourceTree = "<group>"; };
 		3CF1DF612818554B00632152 /* PackagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesView.swift; sourceTree = "<group>"; };
 		3CF1DF63281855AA00632152 /* UIParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIParameters.swift; sourceTree = "<group>"; };
 		3CF1DF65281856C000632152 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		3CF1DF672818571100632152 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		3CF1DF692818900900632152 /* NotificationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationButton.swift; sourceTree = "<group>"; };
+		3CF1DF6B281891E100632152 /* NotificationNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNetworkModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +172,7 @@
 				3CF1DF63281855AA00632152 /* UIParameters.swift */,
 				3CF1DF65281856C000632152 /* ViewModifiers.swift */,
 				3CF1DF672818571100632152 /* Colors.swift */,
+				3CF1DF692818900900632152 /* NotificationButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -202,7 +207,8 @@
 			isa = PBXGroup;
 			children = (
 				3CF1DF57281841F700632152 /* PackageNetworkModel.swift */,
-				3CF1DF5B281846CA00632152 /* EmptyModel.swift */,
+				3CF1DF6B281891E100632152 /* NotificationNetworkModel.swift */,
+				3CF1DF5B281846CA00632152 /* EmptyNetworkModel.swift */,
 			);
 			path = NetworkModels;
 			sourceTree = "<group>";
@@ -313,18 +319,20 @@
 				3CF1DF5028183A8E00632152 /* Resident.swift in Sources */,
 				3CF1DF66281856C000632152 /* ViewModifiers.swift in Sources */,
 				3CF1DF622818554B00632152 /* PackagesView.swift in Sources */,
+				3CF1DF6A2818900900632152 /* NotificationButton.swift in Sources */,
 				3CF1DF5E28184FE100632152 /* ResidentRowView.swift in Sources */,
 				3CF1DF5A281843F200632152 /* Endpoint.swift in Sources */,
 				3CF1DF4C28183A1F00632152 /* ResidentListViewModel.swift in Sources */,
 				3CF1DF3D2818363200632152 /* NetworkRequest.swift in Sources */,
 				3CF1DF4A2818399E00632152 /* ResidentListView.swift in Sources */,
-				3CF1DF5C281846CA00632152 /* EmptyModel.swift in Sources */,
+				3CF1DF5C281846CA00632152 /* EmptyNetworkModel.swift in Sources */,
 				3CF1DF3A2818360600632152 /* NetworkController.swift in Sources */,
 				3CF1DF3F2818366C00632152 /* NetworkError.swift in Sources */,
 				3CF1DF412818368F00632152 /* JSONRequest.swift in Sources */,
 				3CF1DF64281855AA00632152 /* UIParameters.swift in Sources */,
 				3CF1DF58281841F700632152 /* PackageNetworkModel.swift in Sources */,
 				3CF1DF60281851A400632152 /* AppImage.swift in Sources */,
+				3CF1DF6C281891E100632152 /* NotificationNetworkModel.swift in Sources */,
 				3CF1DF472818379700632152 /* AppAPI.swift in Sources */,
 				3CF1DF5428183D7F00632152 /* Package.swift in Sources */,
 			);

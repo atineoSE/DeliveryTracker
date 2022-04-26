@@ -12,7 +12,9 @@ struct ResidentListView: View {
     
     var body: some View {
         List(viewModel.residents) { resident in
-           ResidentRowView(resident: resident)
+            ResidentRowView(resident: resident) {
+                viewModel.notify(resident)
+            }
         }
         .navigationTitle("Residents")
         .navigationBarTitleDisplayMode(.inline)

@@ -30,7 +30,7 @@ class NetworkController: NSObject, ObservableObject {
         completion: @escaping (Result<ReceivedModelType, Error>) -> Void
     ) where ReceivedModelType: Decodable {
         guard requests[endpoint.description] == nil else { return }
-        let getRequest = JSONDataRequest<EmptyModel, ReceivedModelType>(session: session, endpoint: endpoint, method: .get)
+        let getRequest = JSONDataRequest<EmptyNetworkModel, ReceivedModelType>(session: session, endpoint: endpoint, method: .get)
         AppLogger.debug("NETWORK: \(getRequest.debugDescription)")
         requests[endpoint.description] = getRequest
         getRequest.execute { [weak self] result in
@@ -39,7 +39,7 @@ class NetworkController: NSObject, ObservableObject {
         }
     }
     
-    private func post<SentModelType, ReceivedModelType>(
+    func post<SentModelType, ReceivedModelType>(
         endpoint: Endpoint,
         sentModel: SentModelType,
         completion: @escaping (Result<ReceivedModelType, Error>) -> Void

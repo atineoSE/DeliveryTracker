@@ -20,4 +20,12 @@ extension View {
             )
             .clipShape(RoundedRectangle(cornerRadius: .cornerRadius))
     }
+    
+    func scaleOpacityEffect(_ isPressed: Bool) -> some View {
+        withAnimation(.easeInOut) {
+            self
+                .scaleEffect(isPressed ? 0.95 : 1)
+                .opacity(isPressed ? 0.9 : 1)
+        }
+    }
 }

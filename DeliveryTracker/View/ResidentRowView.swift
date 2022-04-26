@@ -9,6 +9,12 @@ import SwiftUI
 
 struct ResidentRowView: View {
     let resident: Resident
+    let notificationAction: () -> Void
+    
+    private var buttonText: String {
+        let count = resident.packages.count
+        return "Notify of \(count) package" + ( count > 1 ? "s" : "")
+    }
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -26,6 +32,10 @@ struct ResidentRowView: View {
             Text("Packages:")
                 .bold()
             PackagesView(packages: resident.packages)
+            
+            NotificationButton(action: notificationAction) {
+                Text(buttonText)
+            }
         }
     }
 }
