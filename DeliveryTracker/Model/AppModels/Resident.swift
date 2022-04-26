@@ -5,7 +5,7 @@
 //  Created by Adrian Tineo Cabello on 26/4/22.
 //
 
-import Foundation
+import SwiftUI
 
 struct Resident {
     let name: String
@@ -22,6 +22,12 @@ extension Resident: Identifiable {
 extension Resident {
     func adding(_ newPackage: Package) -> Self {
         Resident(name: name, email: email, packages: packages + [newPackage])
+    }
+    
+    var image: Image {
+        AppImage.allCases.first { appImage in
+            email.contains(appImage.rawValue)
+        }?.image ?? .default
     }
 }
 

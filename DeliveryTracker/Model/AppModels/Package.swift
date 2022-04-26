@@ -13,6 +13,8 @@ struct Package {
     let carrier: String
 }
 
+extension Package: Identifiable {}
+
 extension Package {
     init(from package: PackagesNetworkModel.PackageResult.Package) {
         self = Package(id: package.id, type: package.type, carrier: package.carrier)
