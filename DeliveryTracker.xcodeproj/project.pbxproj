@@ -15,13 +15,15 @@
 		3CF1DF3D2818363200632152 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF3C2818363200632152 /* NetworkRequest.swift */; };
 		3CF1DF3F2818366C00632152 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF3E2818366C00632152 /* NetworkError.swift */; };
 		3CF1DF412818368F00632152 /* JSONRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF402818368F00632152 /* JSONRequest.swift */; };
-		3CF1DF43281836A600632152 /* GetEntityRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF42281836A600632152 /* GetEntityRequest.swift */; };
-		3CF1DF45281836B500632152 /* PostEntityRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF44281836B500632152 /* PostEntityRequest.swift */; };
 		3CF1DF472818379700632152 /* AppAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF462818379700632152 /* AppAPI.swift */; };
 		3CF1DF4A2818399E00632152 /* ResidentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF492818399E00632152 /* ResidentListView.swift */; };
 		3CF1DF4C28183A1F00632152 /* ResidentListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF4B28183A1F00632152 /* ResidentListViewModel.swift */; };
 		3CF1DF5028183A8E00632152 /* Resident.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF4F28183A8E00632152 /* Resident.swift */; };
 		3CF1DF5228183B3400632152 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF5128183B3400632152 /* AppDelegate.swift */; };
+		3CF1DF5428183D7F00632152 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF5328183D7F00632152 /* Package.swift */; };
+		3CF1DF58281841F700632152 /* PackageNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF57281841F700632152 /* PackageNetworkModel.swift */; };
+		3CF1DF5A281843F200632152 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF59281843F200632152 /* Endpoint.swift */; };
+		3CF1DF5C281846CA00632152 /* EmptyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF5B281846CA00632152 /* EmptyModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,13 +47,15 @@
 		3CF1DF3C2818363200632152 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		3CF1DF3E2818366C00632152 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		3CF1DF402818368F00632152 /* JSONRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONRequest.swift; sourceTree = "<group>"; };
-		3CF1DF42281836A600632152 /* GetEntityRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEntityRequest.swift; sourceTree = "<group>"; };
-		3CF1DF44281836B500632152 /* PostEntityRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEntityRequest.swift; sourceTree = "<group>"; };
 		3CF1DF462818379700632152 /* AppAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAPI.swift; sourceTree = "<group>"; };
 		3CF1DF492818399E00632152 /* ResidentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentListView.swift; sourceTree = "<group>"; };
 		3CF1DF4B28183A1F00632152 /* ResidentListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentListViewModel.swift; sourceTree = "<group>"; };
 		3CF1DF4F28183A8E00632152 /* Resident.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resident.swift; sourceTree = "<group>"; };
 		3CF1DF5128183B3400632152 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3CF1DF5328183D7F00632152 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		3CF1DF57281841F700632152 /* PackageNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageNetworkModel.swift; sourceTree = "<group>"; };
+		3CF1DF59281843F200632152 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		3CF1DF5B281846CA00632152 /* EmptyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,7 @@
 				3CF1DF462818379700632152 /* AppAPI.swift */,
 				3CF1DF392818360600632152 /* NetworkController.swift */,
 				3CF1DF3E2818366C00632152 /* NetworkError.swift */,
+				3CF1DF59281843F200632152 /* Endpoint.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -137,8 +142,6 @@
 			children = (
 				3CF1DF3C2818363200632152 /* NetworkRequest.swift */,
 				3CF1DF402818368F00632152 /* JSONRequest.swift */,
-				3CF1DF42281836A600632152 /* GetEntityRequest.swift */,
-				3CF1DF44281836B500632152 /* PostEntityRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -162,9 +165,28 @@
 		3CF1DF4E28183A8100632152 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3CF1DF4F28183A8E00632152 /* Resident.swift */,
+				3CF1DF55281841A900632152 /* AppModels */,
+				3CF1DF56281841B700632152 /* NetworkModels */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3CF1DF55281841A900632152 /* AppModels */ = {
+			isa = PBXGroup;
+			children = (
+				3CF1DF4F28183A8E00632152 /* Resident.swift */,
+				3CF1DF5328183D7F00632152 /* Package.swift */,
+			);
+			path = AppModels;
+			sourceTree = "<group>";
+		};
+		3CF1DF56281841B700632152 /* NetworkModels */ = {
+			isa = PBXGroup;
+			children = (
+				3CF1DF57281841F700632152 /* PackageNetworkModel.swift */,
+				3CF1DF5B281846CA00632152 /* EmptyModel.swift */,
+			);
+			path = NetworkModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,17 +290,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CF1DF5228183B3400632152 /* AppDelegate.swift in Sources */,
-				3CF1DF43281836A600632152 /* GetEntityRequest.swift in Sources */,
 				3CF1DF0F281833E900632152 /* DeliveryTrackerApp.swift in Sources */,
 				3CF1DF5028183A8E00632152 /* Resident.swift in Sources */,
+				3CF1DF5A281843F200632152 /* Endpoint.swift in Sources */,
 				3CF1DF4C28183A1F00632152 /* ResidentListViewModel.swift in Sources */,
 				3CF1DF3D2818363200632152 /* NetworkRequest.swift in Sources */,
 				3CF1DF4A2818399E00632152 /* ResidentListView.swift in Sources */,
+				3CF1DF5C281846CA00632152 /* EmptyModel.swift in Sources */,
 				3CF1DF3A2818360600632152 /* NetworkController.swift in Sources */,
 				3CF1DF3F2818366C00632152 /* NetworkError.swift in Sources */,
-				3CF1DF45281836B500632152 /* PostEntityRequest.swift in Sources */,
 				3CF1DF412818368F00632152 /* JSONRequest.swift in Sources */,
+				3CF1DF58281841F700632152 /* PackageNetworkModel.swift in Sources */,
 				3CF1DF472818379700632152 /* AppAPI.swift in Sources */,
+				3CF1DF5428183D7F00632152 /* Package.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

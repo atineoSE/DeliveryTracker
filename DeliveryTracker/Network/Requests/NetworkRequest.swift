@@ -24,20 +24,23 @@ extension URLSession: NetworkSession {
 }
 
 protocol NetworkRequest: AnyObject {
-    associatedtype ModelType
-    var urlRequest: URLRequest { get }
+    associatedtype ReceivedModelType
     var session: NetworkSession { get }
+    var endpoint: Endpoint { get }
+    var urlRequest: URLRequest? { get }
     var task: ExtendedDataTask? { get set }
-    func deserialize(_ data: Data?, response: HTTPURLResponse) throws -> ModelType
+    
+    func deserialize(_ data: Data?, response: HTTPURLResponse) throws -> ReceivedModelType
 }
 
 extension NetworkRequest {
-    func execute(withCompletion completion: @escaping (Result<ModelType, Error>) -> Void) {
+    func execute(withCompletion completion: @escaping (Result<ReceivedModelType, Error>) -> Void) {
+        guard let urlRequest = urlRequest else { return }
         task = session.extendedDataTask(with: urlRequest) { [weak self] (data, response, error) in
             guard let strongSelf = self else {
                 return
             }
-            let result = Result { () throws -> ModelType in
+            let result = Result { () throws -> ReceivedModelType in
                 try error?.toNetworkError()
                 guard let response = response as? HTTPURLResponse else {
                     throw NetworkError.unrecoverable
@@ -50,4 +53,3 @@ extension NetworkRequest {
         task?.resume()
     }
 }
-

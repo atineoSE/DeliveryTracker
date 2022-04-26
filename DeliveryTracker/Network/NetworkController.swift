@@ -14,7 +14,7 @@ protocol EndpointConvertible {
 
 class NetworkController: NSObject, ObservableObject {
     private let session: URLSession
-    private var requests: [URL: AnyObject] = [:]
+    private var requests: [String: AnyObject] = [:]
 
     init(session: URLSession) {
         self.session = session
@@ -25,21 +25,37 @@ class NetworkController: NSObject, ObservableObject {
         session.finishTasksAndInvalidate()
     }
     
-    func get<ModelType>(url: URL, completion: @escaping (Result<ModelType, Error>) -> Void) where ModelType: Decodable {
-        let getRequest = GetEntityRequest<ModelType>(url: url, session: session)
-        requests[url] = getRequest
+    func get<ReceivedModelType>(
+        endpoint: Endpoint,
+        completion: @escaping (Result<ReceivedModelType, Error>) -> Void
+    ) where ReceivedModelType: Decodable {
+        guard requests[endpoint.description] == nil else { return }
+        let getRequest = JSONDataRequest<EmptyModel, ReceivedModelType>(session: session, endpoint: endpoint, method: .get)
+        AppLogger.debug("NETWORK: \(getRequest.debugDescription)")
+        requests[endpoint.description] = getRequest
         getRequest.execute { [weak self] result in
             completion(result)
-            self?.requests[url] = nil
+            self?.requests[endpoint.description] = nil
         }
     }
     
-    func post<ModelType>(url: URL, value: ModelType, completion: @escaping (Result<ModelType, Error>) -> Void) where ModelType: Codable {
-        let postRequest = PostEntityRequest<ModelType>(url: url, session: session, value: value)
-        requests[url] = postRequest
+    private func post<SentModelType, ReceivedModelType>(
+        endpoint: Endpoint,
+        sentModel: SentModelType,
+        completion: @escaping (Result<ReceivedModelType, Error>) -> Void
+    ) where SentModelType: Encodable, ReceivedModelType: Decodable {
+        guard requests[endpoint.description] == nil else { return }
+        let postRequest = JSONDataRequest<SentModelType, ReceivedModelType>(
+            session: session,
+            endpoint: endpoint,
+            method: .post,
+            sentModel: sentModel
+        )
+        AppLogger.debug("NETWORK: \(postRequest.debugDescription)")
+        requests[endpoint.description] = postRequest
         postRequest.execute { [weak self] result in
             completion(result)
-            self?.requests[url] = nil
+            self?.requests[endpoint.description] = nil
         }
     }
 }

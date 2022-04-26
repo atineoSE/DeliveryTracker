@@ -14,4 +14,20 @@ class ResidentListViewModel: ObservableObject {
     init(networkController: NetworkController) {
         self.networkController = networkController
     }
+    
+    func loadResidents() {
+        networkController.get(endpoint: .packages) { [weak self] (result: Result<PackagesNetworkModel, Error>) in
+            guard let packagesResult = try? result.get() else {
+                // TODO: handle error
+                return
+            }
+            
+            print(packagesResult)
+            // TODO: process results
+            
+            DispatchQueue.main.async {
+                self?.residents = []
+            }
+        }
+    }
 }

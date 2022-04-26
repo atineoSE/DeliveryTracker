@@ -13,7 +13,9 @@ struct DeliveryTrackerApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ResidentListView(viewModel: ResidentListViewModel(networkController: delegate.networkController))
+            NavigationView {
+                ResidentListView(viewModel: ResidentListViewModel(networkController: delegate.networkController))
+            }
         }
     }
 }

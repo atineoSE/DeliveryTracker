@@ -11,6 +11,13 @@ struct ResidentListView: View {
     @StateObject var viewModel: ResidentListViewModel
     
     var body: some View {
-        EmptyView()
+        List {
+           Text("Dummy row")
+        }
+        .navigationTitle("Residents")
+        .navigationBarTitleDisplayMode(.inline)
+        .task {
+            viewModel.loadResidents()
+        }
     }
 }
