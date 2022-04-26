@@ -22,8 +22,10 @@ class ResidentListViewModel: ObservableObject {
                 return
             }
             AppLogger.debug("Received package results: \n\(packagesResult.description)")
+            let residents = packagesResult.residents
+            AppLogger.debug("Built resident list: \(residents)")
             DispatchQueue.main.async {
-                self?.residents = packagesResult.residents
+                self?.residents = residents
             }
         }
     }

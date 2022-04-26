@@ -18,3 +18,15 @@ extension Resident: Identifiable {
         email
     }
 }
+
+extension Resident {
+    func adding(_ newPackage: Package) -> Self {
+        Resident(name: name, email: email, packages: packages + [newPackage])
+    }
+}
+
+extension Resident: CustomStringConvertible {
+    var description: String {
+        "name: \(name), email: \(email), packages: \(packages.map({$0.description}).joined(separator: ";"))"
+    }
+}

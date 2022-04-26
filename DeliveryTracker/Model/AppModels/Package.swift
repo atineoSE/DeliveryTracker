@@ -12,3 +12,15 @@ struct Package {
     let type: String
     let carrier: String
 }
+
+extension Package {
+    init(from package: PackagesNetworkModel.PackageResult.Package) {
+        self = Package(id: package.id, type: package.type, carrier: package.carrier)
+    }
+}
+
+extension Package: CustomStringConvertible {
+    var description: String {
+        "id: \(id), type: \(type), carrier: \(carrier)"
+    }
+}

@@ -26,7 +26,13 @@ struct PackagesNetworkModel: Decodable {
 
 extension PackagesNetworkModel {
     var residents: [Resident] {
-        []
+        var residents: [String: Resident] = [:]
+        result.packages.forEach { package in
+            let residentId = package.recipient.email
+            let resident = residents[residentId] ?? Resident(name: package.recipient.name, email: package.recipient.email, packages: [])
+            residents[residentId] = resident.adding(Package(from: package))
+        }
+        return residents.values.sorted(by: { $0.name < $1.name })
     }
 }
 
