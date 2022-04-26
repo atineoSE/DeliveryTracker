@@ -12,7 +12,7 @@ protocol EndpointConvertible {
     var endpoint: URL { get }
 }
 
-class NetworkController: NSObject {
+class NetworkController: NSObject, ObservableObject {
     private let session: URLSession
     private var requests: [URL: AnyObject] = [:]
 

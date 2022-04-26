@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3CF1DF0F281833E900632152 /* DeliveryTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF0E281833E900632152 /* DeliveryTrackerApp.swift */; };
-		3CF1DF11281833E900632152 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF10281833E900632152 /* ContentView.swift */; };
 		3CF1DF13281833EB00632152 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CF1DF12281833EB00632152 /* Assets.xcassets */; };
 		3CF1DF16281833EB00632152 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CF1DF15281833EB00632152 /* Preview Assets.xcassets */; };
 		3CF1DF20281833EB00632152 /* DeliveryTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF1F281833EB00632152 /* DeliveryTrackerTests.swift */; };
@@ -19,6 +18,10 @@
 		3CF1DF43281836A600632152 /* GetEntityRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF42281836A600632152 /* GetEntityRequest.swift */; };
 		3CF1DF45281836B500632152 /* PostEntityRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF44281836B500632152 /* PostEntityRequest.swift */; };
 		3CF1DF472818379700632152 /* AppAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF462818379700632152 /* AppAPI.swift */; };
+		3CF1DF4A2818399E00632152 /* ResidentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF492818399E00632152 /* ResidentListView.swift */; };
+		3CF1DF4C28183A1F00632152 /* ResidentListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF4B28183A1F00632152 /* ResidentListViewModel.swift */; };
+		3CF1DF5028183A8E00632152 /* Resident.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF4F28183A8E00632152 /* Resident.swift */; };
+		3CF1DF5228183B3400632152 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF1DF5128183B3400632152 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +37,6 @@
 /* Begin PBXFileReference section */
 		3CF1DF0B281833E900632152 /* DeliveryTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeliveryTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CF1DF0E281833E900632152 /* DeliveryTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTrackerApp.swift; sourceTree = "<group>"; };
-		3CF1DF10281833E900632152 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3CF1DF12281833EB00632152 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3CF1DF15281833EB00632152 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3CF1DF1B281833EB00632152 /* DeliveryTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeliveryTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +48,10 @@
 		3CF1DF42281836A600632152 /* GetEntityRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEntityRequest.swift; sourceTree = "<group>"; };
 		3CF1DF44281836B500632152 /* PostEntityRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEntityRequest.swift; sourceTree = "<group>"; };
 		3CF1DF462818379700632152 /* AppAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAPI.swift; sourceTree = "<group>"; };
+		3CF1DF492818399E00632152 /* ResidentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentListView.swift; sourceTree = "<group>"; };
+		3CF1DF4B28183A1F00632152 /* ResidentListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentListViewModel.swift; sourceTree = "<group>"; };
+		3CF1DF4F28183A8E00632152 /* Resident.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resident.swift; sourceTree = "<group>"; };
+		3CF1DF5128183B3400632152 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +94,10 @@
 			isa = PBXGroup;
 			children = (
 				3CF1DF0E281833E900632152 /* DeliveryTrackerApp.swift */,
-				3CF1DF10281833E900632152 /* ContentView.swift */,
+				3CF1DF5128183B3400632152 /* AppDelegate.swift */,
+				3CF1DF482818396000632152 /* View */,
+				3CF1DF4D28183A3000632152 /* ViewModel */,
+				3CF1DF4E28183A8100632152 /* Model */,
 				3CF1DF38281835F900632152 /* Network */,
 				3CF1DF12281833EB00632152 /* Assets.xcassets */,
 				3CF1DF14281833EB00632152 /* Preview Content */,
@@ -132,6 +141,30 @@
 				3CF1DF44281836B500632152 /* PostEntityRequest.swift */,
 			);
 			path = Requests;
+			sourceTree = "<group>";
+		};
+		3CF1DF482818396000632152 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3CF1DF492818399E00632152 /* ResidentListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3CF1DF4D28183A3000632152 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3CF1DF4B28183A1F00632152 /* ResidentListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3CF1DF4E28183A8100632152 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3CF1DF4F28183A8E00632152 /* Resident.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,10 +267,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CF1DF11281833E900632152 /* ContentView.swift in Sources */,
+				3CF1DF5228183B3400632152 /* AppDelegate.swift in Sources */,
 				3CF1DF43281836A600632152 /* GetEntityRequest.swift in Sources */,
 				3CF1DF0F281833E900632152 /* DeliveryTrackerApp.swift in Sources */,
+				3CF1DF5028183A8E00632152 /* Resident.swift in Sources */,
+				3CF1DF4C28183A1F00632152 /* ResidentListViewModel.swift in Sources */,
 				3CF1DF3D2818363200632152 /* NetworkRequest.swift in Sources */,
+				3CF1DF4A2818399E00632152 /* ResidentListView.swift in Sources */,
 				3CF1DF3A2818360600632152 /* NetworkController.swift in Sources */,
 				3CF1DF3F2818366C00632152 /* NetworkError.swift in Sources */,
 				3CF1DF45281836B500632152 /* PostEntityRequest.swift in Sources */,

@@ -6,15 +6,14 @@
 //
 
 import SwiftUI
-import os.log
-
-let AppLogger = Logger.init(subsystem: "com.adriantineo.DeliveryTracker", category: "General")
 
 @main
 struct DeliveryTrackerApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ResidentListView(viewModel: ResidentListViewModel(networkController: delegate.networkController))
         }
     }
 }
