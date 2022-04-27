@@ -13,6 +13,7 @@ protocol ExtendedDataTask {
 
 protocol NetworkSession {
     func extendedDataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> ExtendedDataTask
+    func invalidate()
 }
 
 extension URLSessionDataTask: ExtendedDataTask {}
@@ -20,6 +21,10 @@ extension URLSessionDataTask: ExtendedDataTask {}
 extension URLSession: NetworkSession {
     func extendedDataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> ExtendedDataTask {
         return dataTask(with: request, completionHandler: completionHandler) as ExtendedDataTask
+    }
+    
+    func invalidate() {
+        finishTasksAndInvalidate()
     }
 }
 

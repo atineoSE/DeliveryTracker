@@ -12,23 +12,33 @@ protocol EndpointConvertible {
     var endpoint: URL { get }
 }
 
-class NetworkController: NSObject, ObservableObject {
-    private let session: URLSession
+protocol NetworkController {
+    func get<ReceivedModelType>(endpoint: Endpoint, completion: @escaping (Result<ReceivedModelType, Error>) -> Void)
+    where ReceivedModelType: Decodable & Defaultable
+    
+    func post<SentModelType, ReceivedModelType>(endpoint: Endpoint, sentModel: SentModelType, completion: @escaping (Result<ReceivedModelType, Error>) -> Void)
+    where SentModelType: Encodable, ReceivedModelType: Decodable & Defaultable
+}
+
+class AppNetworkController: NSObject, ObservableObject {
+    private let session: NetworkSession
     private var requests: [String: AnyObject] = [:]
 
-    init(session: URLSession) {
+    init(session: NetworkSession) {
         self.session = session
         requests = [:]
     }
     
     deinit {
-        session.finishTasksAndInvalidate()
+        session.invalidate()
     }
-    
+}
+
+extension AppNetworkController: NetworkController {
     func get<ReceivedModelType>(
         endpoint: Endpoint,
         completion: @escaping (Result<ReceivedModelType, Error>) -> Void
-    )  where ReceivedModelType: Decodable & Defaultable {
+    ) where ReceivedModelType: Decodable & Defaultable {
         guard requests[endpoint.description] == nil else { return }
         let getRequest = JSONDataRequest<EmptyNetworkModel, ReceivedModelType>(session: session, endpoint: endpoint, method: .get)
         AppLogger.debug("NETWORK: \(getRequest.debugDescription)")
@@ -59,4 +69,3 @@ class NetworkController: NSObject, ObservableObject {
         }
     }
 }
-

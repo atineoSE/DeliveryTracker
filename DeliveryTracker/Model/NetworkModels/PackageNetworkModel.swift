@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct PackagesNetworkModel: Decodable {
-    struct PackageResult: Decodable {
-        struct Package: Decodable {
-            struct Recipient: Decodable {
+struct PackagesNetworkModel: Codable {
+    struct PackageResult: Codable {
+        struct Package: Codable {
+            struct Recipient: Codable {
                 let name: String
                 let email: String
             }
