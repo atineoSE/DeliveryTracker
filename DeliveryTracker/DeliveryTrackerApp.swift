@@ -13,8 +13,12 @@ struct DeliveryTrackerApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                ResidentListView(viewModel: ResidentListViewModel(networkController: delegate.networkController))
+            if !delegate.isTesting {
+                NavigationView {
+                    ResidentListView(viewModel: ResidentListViewModel(networkController: delegate.networkController))
+                }
+            } else {
+                EmptyView()
             }
         }
     }
