@@ -30,7 +30,7 @@ protocol NetworkRequest: AnyObject {
     var urlRequest: URLRequest? { get }
     var task: ExtendedDataTask? { get set }
     
-    func deserialize(_ data: Data?, response: HTTPURLResponse) throws -> ReceivedModelType
+    func deserialize(_ data: Data?) -> ReceivedModelType
 }
 
 extension NetworkRequest {
@@ -46,7 +46,7 @@ extension NetworkRequest {
                     throw NetworkError.unrecoverable
                 }
                 try response.validate()
-                return try strongSelf.deserialize(data, response: response)
+                return strongSelf.deserialize(data)
             }
             completion(result)
         }

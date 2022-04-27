@@ -28,7 +28,7 @@ class NetworkController: NSObject, ObservableObject {
     func get<ReceivedModelType>(
         endpoint: Endpoint,
         completion: @escaping (Result<ReceivedModelType, Error>) -> Void
-    ) where ReceivedModelType: Decodable {
+    )  where ReceivedModelType: Decodable & Defaultable {
         guard requests[endpoint.description] == nil else { return }
         let getRequest = JSONDataRequest<EmptyNetworkModel, ReceivedModelType>(session: session, endpoint: endpoint, method: .get)
         AppLogger.debug("NETWORK: \(getRequest.debugDescription)")
@@ -43,7 +43,7 @@ class NetworkController: NSObject, ObservableObject {
         endpoint: Endpoint,
         sentModel: SentModelType,
         completion: @escaping (Result<ReceivedModelType, Error>) -> Void
-    ) where SentModelType: Encodable, ReceivedModelType: Decodable {
+    ) where SentModelType: Encodable, ReceivedModelType: Decodable & Defaultable {
         guard requests[endpoint.description] == nil else { return }
         let postRequest = JSONDataRequest<SentModelType, ReceivedModelType>(
             session: session,

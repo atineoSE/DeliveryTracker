@@ -16,6 +16,9 @@ struct ResidentListView: View {
                 viewModel.notify(resident)
             }
         }
+        .alert(item: $viewModel.alert) { presentedAlert in
+            presentedAlert.alert
+        }
         .navigationTitle("Residents")
         .navigationBarTitleDisplayMode(.inline)
         .task {

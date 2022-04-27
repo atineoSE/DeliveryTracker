@@ -8,3 +8,9 @@
 import Foundation
 
 struct EmptyNetworkModel: Codable {}
+
+extension EmptyNetworkModel: Defaultable {
+    static var empty: EmptyNetworkModel {
+        Self()
+    }
+}

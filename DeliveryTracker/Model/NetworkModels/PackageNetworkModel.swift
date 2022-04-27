@@ -24,7 +24,14 @@ struct PackagesNetworkModel: Decodable {
     let result: PackageResult
 }
 
+
+extension PackagesNetworkModel.PackageResult {
+    static let emptyModel = Self(packages: [])
+}
+
 extension PackagesNetworkModel {
+    static let emptyModel = PackagesNetworkModel(result: .emptyModel)
+    
     var residents: [Resident] {
         var residents: [String: Resident] = [:]
         result.packages.forEach { package in
@@ -33,6 +40,12 @@ extension PackagesNetworkModel {
             residents[residentId] = resident.adding(Package(from: package))
         }
         return residents.values.sorted(by: { $0.name < $1.name })
+    }
+}
+
+extension PackagesNetworkModel: Defaultable {
+    static var empty: PackagesNetworkModel {
+        .emptyModel
     }
 }
 

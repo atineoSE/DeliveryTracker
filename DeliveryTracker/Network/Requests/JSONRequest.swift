@@ -12,7 +12,7 @@ enum HTTPMethod: String {
     case post = "POST"
 }
 
-class JSONDataRequest<SentModel: Encodable, ReceivedModelType: Decodable>: NetworkRequest {
+class JSONDataRequest<SentModel: Encodable, ReceivedModelType: Decodable & Defaultable>: NetworkRequest {
     let session: NetworkSession
     let endpoint: Endpoint
     var method: HTTPMethod
@@ -59,12 +59,18 @@ class JSONDataRequest<SentModel: Encodable, ReceivedModelType: Decodable>: Netwo
 }
 
 extension JSONDataRequest {
-    func deserialize(_ data: Data?, response: HTTPURLResponse) throws -> ReceivedModelType {
+    func deserialize(_ data: Data?) -> ReceivedModelType {
         guard let data = data else {
-            throw NetworkError.unrecoverable
+            return ReceivedModelType.empty
         }
-        let model = try decoder.decode(ReceivedModelType.self, from: data)
-        return model
+        do {
+            return try decoder.decode(ReceivedModelType.self, from: data)
+        } catch {
+            // Special handling for unusual server response: clear text rathen than JSON
+            // We proceed with empty response type
+            AppLogger.debug("Could not deserialize data with error: \(error.localizedDescription)")
+            return ReceivedModelType.empty
+        }
     }
 }
 

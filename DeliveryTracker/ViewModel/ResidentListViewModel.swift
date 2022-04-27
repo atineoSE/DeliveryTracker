@@ -10,6 +10,7 @@ import Foundation
 class ResidentListViewModel: ObservableObject {
     private let networkController: NetworkController
     @Published private(set) var residents: [Resident] = []
+    @Published var alert: PresentedAlert?
     
     init(networkController: NetworkController) {
         self.networkController = networkController
@@ -18,28 +19,33 @@ class ResidentListViewModel: ObservableObject {
     func notify(_ resident: Resident) {
         guard let resident = residents.first(where: { $0.id == resident.id }) else { return }
         networkController.post(endpoint: .notifications, sentModel: NotificationNetworkModel(from: resident)) { [weak self] (result: Result<EmptyNetworkModel, Error>) in
-            guard let _ = try? result.get() else {
-                // TODO: handle error
-                return
-            }
-            DispatchQueue.main.async {
-                // TODO: show alert of sent notification
-                print("Returned from call")
+            do {
+                let _ = try result.get()
+                DispatchQueue.main.async {
+                    self?.alert = .notificationsSent(name: resident.name, packageCount: resident.packages.count)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    self?.alert = .connectionError(message: error.localizedDescription)
+                }
             }
         }
     }
     
     func loadResidents() {
         networkController.get(endpoint: .packages) { [weak self] (result: Result<PackagesNetworkModel, Error>) in
-            guard let packagesResult = try? result.get() else {
-                // TODO: handle error
-                return
-            }
-            AppLogger.debug("Received package results: \n\(packagesResult.description)")
-            let residents = packagesResult.residents
-            AppLogger.debug("Built resident list: \(residents)")
-            DispatchQueue.main.async {
-                self?.residents = residents
+            do {
+                let packagesResult = try result.get()
+                AppLogger.debug("Received package results: \n\(packagesResult.description)")
+                let residents = packagesResult.residents
+                AppLogger.debug("Built resident list: \(residents)")
+                DispatchQueue.main.async {
+                    self?.residents = residents
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    self?.alert = .connectionError(message: error.localizedDescription)
+                }
             }
         }
     }

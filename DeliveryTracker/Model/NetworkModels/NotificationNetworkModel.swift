@@ -19,7 +19,7 @@ extension NotificationNetworkModel {
     init(from resident: Resident) {
         let notification = Notification(
             email: resident.email,
-            content: resident.packages.map{ "\($0.type), \($0.carrier))" }.joined(separator: ";")
+            content: resident.packages.map{ "(\($0.type), \($0.carrier))" }.joined(separator: ";")
         )
         self = NotificationNetworkModel(notify: [notification])
     }
