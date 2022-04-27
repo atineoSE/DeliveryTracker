@@ -20,7 +20,6 @@ The app follows the specifications given [here](https://www.notion.so/joindaisy/
 
 
 
-## Demo
+## Video demo
 
-![](./img/DeliveryTracker_demo.mp4)
-
+![](https://user-images.githubusercontent.com/12340433/165503107-0b07739a-04a8-448d-9fe3-c25b0b654712.mp4 "Video demo")
