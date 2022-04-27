@@ -19,6 +19,8 @@ extension Resident: Identifiable {
     }
 }
 
+extension Resident: Equatable {}
+
 extension Resident {
     func adding(_ newPackage: Package) -> Self {
         Resident(name: name, email: email, packages: packages + [newPackage])

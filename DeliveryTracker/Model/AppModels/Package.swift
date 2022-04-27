@@ -15,6 +15,8 @@ struct Package {
 
 extension Package: Identifiable {}
 
+extension Package: Equatable {}
+
 extension Package {
     init(from package: PackagesNetworkModel.PackageResult.Package) {
         self = Package(id: package.id, type: package.type, carrier: package.carrier)
